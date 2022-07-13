@@ -6,6 +6,10 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <Text>peepeepoopoo</Text>
+      <View style ={styles.box}>
+      <Text>niaisaboob</Text>
+
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,8 +18,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#03e7fc',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  box: {
+    backgroundColor: '#ce03fc',
+    width: '83%',
+    height: '39%',
+    borderRadius: '4000px',
+  }
 });
