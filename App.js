@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   setFontSize: {
-    fontSize: '20px',
+    fontSize: '30px'
   },
   box: {
-    backgroundColor: 'ffffff',
+    backgroundColor: '#86ebd3',
     width: '83%',
     height: '39%',
     borderRadius: '4',
