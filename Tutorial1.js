@@ -12,7 +12,7 @@ export default function Tutorial1() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#03e7fc',
+    backgroundColor: '#6c6e9c',
     alignItems: 'center',
     justifyContent: 'center',
   },
