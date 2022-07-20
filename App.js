@@ -32,11 +32,23 @@ function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Welcome', headerShown: false }}
+          options={{ title: 'Welcome', headerShown: false, }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="Tutorial1" component={Tutorial1} />
-        <Stack.Screen name="Tutorial2" component={Tutorial2} options={{headerShown: false}} />
+        <Stack.Screen name="Tutorial1" component={Tutorial1}
+        options={{
+          title: 'Netflix and Chill', 
+          headerStyle: {backgroundColor: '#47497d'}, 
+          headerTitleStyle: {fontSize: 20, color: '#FFFFFF'},
+          headerBackVisible: false,
+          }}  />
+        <Stack.Screen name="Tutorial2" component={Tutorial2}
+        options={{
+            title: 'Netflix and Chill', 
+            headerStyle: {backgroundColor: '#47497d'}, 
+            headerTitleStyle: {fontSize: 20, color: '#FFFFFF'},
+            headerBackVisible: false,
+            }} />
       </Stack.Navigator>
     </NavigationContainer>
       
