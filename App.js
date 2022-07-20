@@ -36,7 +36,7 @@ function App() {
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Tutorial1" component={Tutorial1} />
-        <Stack.Screen name="Tutorial2" component={Tutorial2} />
+        <Stack.Screen name="Tutorial2" component={Tutorial2} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
       
