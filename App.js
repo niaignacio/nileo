@@ -20,11 +20,6 @@ const HomeScreen = ({ navigation }) => {
 const ProfileScreen = ({ navigation, route }) => {
   return <Text>This is {route.params.name}'s profile</Text>;
 };
-    <View style={styles.container}>
-      <Text style = {styles.setFontSize}>Hello, let's take a look around!</Text>
-  
-      <View style ={styles.box}>
-      <Text> chicken nuggets</Text>
 
 function App() {
   return (
