@@ -17,12 +17,6 @@ const Tutorial1 = ({ navigation, route }) => {
       <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial2')}>
         <Text> Next </Text>
       </Pressable>
-      {/* <Button
-        title="Previous"
-        onPress={() => navigation.navigate('Home')} /> */}
-      {/* <Button 
-        title="Next" 
-        onPress={() => navigation.navigate('Tutorial2')} /> */}
     </View>
   );
 }
