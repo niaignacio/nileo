@@ -35,7 +35,7 @@ function App() {
           options={{ title: 'Welcome', headerShown: false }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="Tutorial1" component={Tutorial1} />
+        <Stack.Screen name="Tutorial1" component={Tutorial1} options={{headerShown: false}}/>
         <Stack.Screen name="Tutorial2" component={Tutorial2} />
       </Stack.Navigator>
     </NavigationContainer>

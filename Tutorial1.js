@@ -11,12 +11,14 @@ const Tutorial1 = ({ navigation, route }) => {
         style={styles.picture}
         source={require('./images/download.jpg')} />
       <Text style={styles.description}>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future. Aspiring actress serves lattes to movie stars in between auditions and jazz musician Sebastian scrapes by playing cocktail-party gigs in dingy bars.</Text>
-      <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Home')}>
-        <Text> Previous </Text>
-      </Pressable>
-      <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial2')}>
-        <Text> Next </Text>
-      </Pressable>
+        <View style={styles.inline}>
+          <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Home')}>
+            <Text> Previous </Text>
+          </Pressable>
+          <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial2')}>
+            <Text> Next </Text>
+          </Pressable>
+        </View>
     </View>
   );
 }
@@ -40,4 +42,17 @@ const styles = StyleSheet.create({
   description: {
     color: '#ffffff'
   },
+  navBtn: {
+    backgroundColor: '#D9D9D9',
+    padding: 2,
+    borderRadius: 10
+  },
+  inline: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#fc031c',
+    padding: 8,
+  }
 });
