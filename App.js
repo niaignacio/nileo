@@ -9,7 +9,6 @@ const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
   return (
-<<<<<<< HEAD
     <Button
       title="Go to Jane's profile"
       onPress={() =>
@@ -21,13 +20,6 @@ const HomeScreen = ({ navigation }) => {
 const ProfileScreen = ({ navigation, route }) => {
   return <Text>This is {route.params.name}'s profile</Text>;
 };
-=======
-    <View style={styles.container}>
-      <Text style = {styles.setFontSize}>Hello, let's take a look around!</Text>
-  
-      <View style ={styles.box}>
-      <Text>chicken nuggets</Text>
->>>>>>> leo
 
 function App() {
   return (
