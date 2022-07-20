@@ -7,7 +7,7 @@ export default function App() {
       <Text style = {styles.setFontSize}>Hello, let's take a look around!</Text>
   
       <View style ={styles.box}>
-      <Text></Text>
+      <Text>chicken nuggets</Text>
 
       </View>
       <StatusBar style="auto" />
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   setFontSize: {
-    fontSize: '30px'
+    fontSize: '20px'
   },
   box: {
     backgroundColor: '#86ebd3',
