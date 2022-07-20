@@ -9,12 +9,8 @@ const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
   return (
-<<<<<<< HEAD
-    <Button
-=======
     <View style={styles.container}>
       <Button
->>>>>>> 97aeb9682b3199b48aa1c712c2fba38d9c0bd1e0
       title="Go to Jane's profile"
       onPress={() =>
         navigation.navigate('Profile', { name: 'Jane' })
@@ -51,7 +47,7 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6c6e9c',
+    backgroundColor: '#86ebd3',
     alignItems: 'center',
     justifyContent: 'center',
   },

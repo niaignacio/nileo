@@ -17,7 +17,7 @@ export default Tutorial2;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6C6E9C',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '5%'
