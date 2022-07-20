@@ -6,19 +6,38 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tutorial1 = ({ navigation, route }) => {
   return (
+    
     <View style={styles.container}>
-      <Image 
-        style={styles.picture}
-        source={require('./images/download.jpg')} />
-      <Text style={styles.description}>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future. Aspiring actress serves lattes to movie stars in between auditions and jazz musician Sebastian scrapes by playing cocktail-party gigs in dingy bars.</Text>
+        <View style={styles.box}>
+          <Image 
+            style={styles.picture}
+            source={require('./images/download.jpg')} />
+          
+          <View style={styles.txtbox}>
+            <Text style={styles.align}> While navigating their careers in Los Angeles, a pianist and...</Text>
+          </View>
+
+          <View style={styles.txtbox}>
+            <Text style={styles.align}>IMDB: </Text>
+            <Text style={styles.align}>RottenTomatoes: </Text>
+          </View>
+        </View>
+
+        <View style={styles.tutorialtxt}>
+          <Text style={styles.tutorialFont}>Swipe LEFT if you would like to add this movie to your watchlist!</Text>
+
+        </View>
+        
         <View style={styles.inline}>
           <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Home')}>
-            <Text> Previous </Text>
+            <Text style={styles.fontSize}> Prev </Text>
           </Pressable>
+    
           <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial2')}>
-            <Text> Next </Text>
+            <Text style={styles.fontSize}> Next </Text>
           </Pressable>
         </View>
+        
     </View>
   );
 }
@@ -31,28 +50,53 @@ const styles = StyleSheet.create({
     backgroundColor: '#6C6E9C',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '5%'
   },
   box: {
-    backgroundColor: '#ce03fc',
-    width: '83%',
-    height: '39%',
-    borderRadius: '4000px',
+    backgroundColor: '#FFFFFF',
+    width: '80%',
+    height: '60%',
+    borderRadius: '40px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tutorialtxt:{
+    padding: 10,
+    fontSize: 30,
+  },
+  tutorialFont:{
+    fontSize: 30,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginTop: 20,
+  },
+  align:{
+    textAlign: 'center',
+  },
+  txtbox:{
+    marginRight: '10%',
+    marginLeft: '10%',
+    marginTop: '5%',
+  },
+  inline:{
+    display: 'flex',
+    width: '80%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: '10%',
+  },
+  navBtn:{
+    backgroundColor: '#FFFFFF',
+    borderRadius: '40px',
+    width: 100,
+    alignItems: 'center',
+    paddingTop: 3,
+    paddingBottom: 3
+  },
+  fontSize:{
+    fontSize: 30,
+   
   },
   description: {
     color: '#ffffff'
   },
-  navBtn: {
-    backgroundColor: '#D9D9D9',
-    padding: 2,
-    borderRadius: 10
-  },
-  inline: {
-    display: 'flex',
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#fc031c',
-    padding: 8,
-  }
 });

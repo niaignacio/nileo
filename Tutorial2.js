@@ -8,38 +8,39 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tutorial2 = ({ navigation, route }) => {
   return (
+    
+
     <View style={styles.container}>
-      <View style={styles.box}>
-        
-      
-        <Image 
-          style={styles.picture}
-          source={require('./images/download.jpg')} />
-        
-        <View style={styles.txtbox}>
-          <Text> While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future. Aspiring actress serves lattes to movie stars in between auditions and jazz musician Sebastian scrapes by playing cocktail-party gigs in dingy bars.</Text>
+        <View style={styles.box}>
+          <Image 
+            style={styles.picture}
+            source={require('./images/download.jpg')} />
+          
+          <View style={styles.txtbox}>
+            <Text style={styles.align}> While navigating their careers in Los Angeles, a pianist and...</Text>
+          </View>
 
+          <View style={styles.txtbox}>
+            <Text style={styles.align}>IMDB: </Text>
+            <Text style={styles.align}>RottenTomatoes: </Text>
+          </View>
         </View>
 
-        <View style={styles.txtbox}>
-          <Text>IMDB: </Text>
-          <Text>RottenTomatoes: </Text>
-        </View>
+        <View style={styles.tutorialtxt}>
+          <Text style={styles.tutorialFont}>Swipe RIGHT if this movie does not pique your interest!</Text>
 
-      </View>
-      
-      <View style={styles.inline}>
-        <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial1')}>
-          <Text style={styles.fontSize}> Prev </Text>
-        </Pressable>
-  
-        <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial3')}>
-          <Text style={styles.fontSize}> Next </Text>
-        </Pressable>
-      </View>
+        </View>
         
-      
-      
+        <View style={styles.inline}>
+          <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial1')}>
+            <Text style={styles.fontSize}> Prev </Text>
+          </Pressable>
+    
+          <Pressable style={styles.navBtn} onPress={() => navigation.navigate('Tutorial3')}>
+            <Text style={styles.fontSize}> Next </Text>
+          </Pressable>
+        </View>
+        
     </View>
 
 
@@ -54,17 +55,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#6C6E9C',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '7%',
-   
   },
   box: {
     backgroundColor: '#FFFFFF',
-    width: '90%',
-    height: '70%',
+    width: '80%',
+    height: '60%',
     borderRadius: '40px',
     alignItems: 'center',
     justifyContent: 'center',
-    
+  },
+  tutorialtxt:{
+    padding: 10,
+    fontSize: 30,
+  },
+  tutorialFont:{
+    fontSize: 30,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginTop: 20,
+  },
+  align:{
+    textAlign: 'center',
   },
   txtbox:{
     marginRight: '10%',
