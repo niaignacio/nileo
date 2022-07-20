@@ -7,7 +7,7 @@ export default function App() {
       <Text style = {styles.setFontSize}>Hello, let's take a look around!</Text>
   
       <View style ={styles.box}>
-      <Text> push to nia branch?? </Text>
+      <Text> chicken nuggets</Text>
 
       </View>
       <StatusBar style="auto" />
