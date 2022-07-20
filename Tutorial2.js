@@ -81,13 +81,13 @@ const styles = StyleSheet.create({
   navBtn:{
     backgroundColor: '#FFFFFF',
     borderRadius: '40px',
-    height: '150%',
     width: 100,
     alignItems: 'center',
+    paddingTop: 3,
+    paddingBottom: 3
   },
   fontSize:{
     fontSize: 30,
-    marginTop: 15,
   },
   description: {
     color: '#ffffff'
