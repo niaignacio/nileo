@@ -4,21 +4,15 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Tutorial1 = ({ navigation, route }) => {
+const Tutorial2 = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
-      <Image 
-        style={styles.picture}
-        source={require('./images/download.jpg')} />
-      <Text style={styles.description}>While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future. Aspiring actress serves lattes to movie stars in between auditions and jazz musician Sebastian scrapes by playing cocktail-party gigs in dingy bars.</Text>
-      <Button 
-        title="Next" 
-        onPress={() => navigation.navigate('Tutorial2')} />
+      <Text> Tutorial Page 2</Text>
     </View>
   );
 }
 
-export default Tutorial1;
+export default Tutorial2;
 
 const styles = StyleSheet.create({
   container: {

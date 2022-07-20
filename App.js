@@ -3,18 +3,26 @@ import * as React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Tutorial1 } from './Tutorial1.js';
-
+import Tutorial1 from './Tutorial1.js';
+import Tutorial2 from './Tutorial2.js';
 const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
   return (
+<<<<<<< HEAD
     <Button
+=======
+    <View style={styles.container}>
+      <Button
+>>>>>>> 97aeb9682b3199b48aa1c712c2fba38d9c0bd1e0
       title="Go to Jane's profile"
       onPress={() =>
         navigation.navigate('Profile', { name: 'Jane' })
       }
     />
+      <Text> Welcome! Let's take a look around. </Text>
+      <Button title="->" onPress={() => navigation.navigate('Tutorial1', {prev: 'Home'})} />
+    </View>
   );
 };
 const ProfileScreen = ({ navigation, route }) => {
@@ -28,9 +36,11 @@ function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Welcome', headerShown: false }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Tutorial1" component={Tutorial1} />
+        <Stack.Screen name="Tutorial2" component={Tutorial2} />
       </Stack.Navigator>
     </NavigationContainer>
       
