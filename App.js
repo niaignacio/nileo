@@ -1,38 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/core';
 import Tutorial1 from './Tutorial1.js';
 import Tutorial2 from './Tutorial2.js';
+import SignUp from './SignUp.js';
+import MainScreen from './MainScreen.js';
+import Welcome from './Welcome.js';
+import { auth } from './firebase';
 const Stack = createNativeStackNavigator();
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <Button
-      title="Go to Jane's profile"
-      onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' })
-      }
-    />
-      <Text> Welcome! Let's take a look around. </Text>
-      <Button title="->" onPress={() => navigation.navigate('Tutorial1', {prev: 'Home'})} />
-    </View>
-  );
-};
 const ProfileScreen = ({ navigation, route }) => {
   return <Text>This is {route.params.name}'s profile</Text>;
 };
-
 function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="Welcome"
+          component={Welcome}
           options={{ title: 'Welcome', headerShown: false, }}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainScreen}
+          options={{ headerShown: false, }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Tutorial1" component={Tutorial1}
@@ -43,6 +38,13 @@ function App() {
           headerBackVisible: false,
           }}  />
         <Stack.Screen name="Tutorial2" component={Tutorial2}
+        options={{
+            title: 'Netflix and Chill', 
+            headerStyle: {backgroundColor: '#47497d'}, 
+            headerTitleStyle: {fontSize: 20, color: '#FFFFFF'},
+            headerBackVisible: false,
+            }} />
+            <Stack.Screen name="SignUp" component={SignUp}
         options={{
             title: 'Netflix and Chill', 
             headerStyle: {backgroundColor: '#47497d'}, 
