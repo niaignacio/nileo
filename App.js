@@ -10,6 +10,7 @@ import SignUp from './SignUp.js';
 import MainScreen from './MainScreen.js';
 import Welcome from './Welcome.js';
 import { auth } from './firebase';
+import Navbar from './HamburgerComponents/Navbar.js';
 const Stack = createNativeStackNavigator();
 
 const ProfileScreen = ({ navigation, route }) => {
@@ -18,7 +19,8 @@ const ProfileScreen = ({ navigation, route }) => {
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Navbar/>
+      {/* <Stack.Navigator>
         <Stack.Screen
           name="Welcome"
           component={Welcome}
@@ -51,7 +53,7 @@ function App() {
             headerTitleStyle: {fontSize: 20, color: '#FFFFFF'},
             headerBackVisible: false,
             }} />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
     </NavigationContainer>
       
   );

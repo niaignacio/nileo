@@ -7,6 +7,7 @@ const MainScreen = ({ navigation, route }) => {
   let [movieImage, setMovieImage] = useState('');
   let [description, setDescription] = useState('');
   let [imdb, setImdb] = useState();
+  let [title, setTitle] = useState('');
   const fetchApiCall = () => {
      const options = {
           method: 'GET',
@@ -22,10 +23,12 @@ const MainScreen = ({ navigation, route }) => {
           .then(response => {
                const rand = Math.floor(Math.random() * response.results.length-1); //choose a random movie on that page
                let result = response.results[rand];
+               console.log(result);
                console.log("backdropURL: " + result.backdropURLs.original)
                setMovieImage(result.backdropURLs.original);
                setDescription(result.overview);
-               setImdb(result.imdbRating);
+               setImdb((Number(result.imdbRating))/10);
+               setTitle(result.originalTitle);
           })
           .catch(err => console.error(err));
   }
@@ -36,35 +39,40 @@ const MainScreen = ({ navigation, route }) => {
                <Text> API Call </Text>
           </Pressable>
         <View style={styles.box}>
+          <View style={styles.titlebox}>
+          <Text style={styles.titlebox}>{title} </Text>
+
+          </View>
+          <View style={styles.imgbox}>
           <Image 
-            style={styles.picture}
-          source={{uri: `${movieImage}`}} />
-          
+              style={styles.picture}
+            source={{uri: `${movieImage}`}} />
+          </View>
+            
           <View style={styles.txtbox}>
             <Text style={styles.align} numberOfLines={3}> {description} </Text>
           </View>
 
           <View style={styles.txtbox}>
             <Text style={styles.align}>IMDB: {imdb} </Text>
-            <Text style={styles.align}>RottenTomatoes: </Text>
           </View>
         </View>
 
         <View style={styles.btnContainer}>
           <Pressable style={styles.circleBtnContainer}>
                <Image 
-                style={styles.circleBtn}
+                style={styles.circleBtn1}
                source={require('./images/dislikeBtnpng.png')} />
           </Pressable>
           <Pressable style={styles.circleBtnContainer}>
                <Image 
-                    style={styles.circleBtn}
+                    style={styles.circleBtn2}
                     source={require('./images/starBtn.png')} />
           </Pressable>
           <Pressable style={styles.circleBtnContainer}>
                <Image 
-                    style={styles.circleBtn}
-                    source={require('./images/likeBtn.png')} />
+                    style={styles.circleBtn3}
+                    source={require('./images/igHeart.png')} />
           </Pressable>
         </View>
         
@@ -84,10 +92,16 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: '#FFFFFF',
     width: '80%',
-    height: '60%',
+    height: '65%',
     borderRadius: '40px',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titlebox:{
+    fontSize: 20,
+  },
+  imgbox:{
+    paddingTop: 10,
   },
   tutorialtxt:{
     padding: 10,
@@ -134,17 +148,34 @@ const styles = StyleSheet.create({
      width: '100%',
      display: 'flex',
      flexDirection: 'row',
-     justifyContent: 'space-evenly'
+     justifyContent: 'space-evenly',
+     paddingTop: 20,
   },
   circleBtnContainer: {
-     // backgroundColor: '#FFFFFF',
-     // width: '20%'
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  circleBtn: {
-     width: 50,
-     height: 50,
-     borderRadius: 25,
-     backgroundColor: '#FFFFFF'
+  circleBtn1: {
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+
+  },
+  circleBtn2: {
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+
+  },
+  circleBtn3: {
+    width: 30,
+    height: 30,
+    backgroundColor: '#FFFFFF',
+    
   },
   picture: {
      width: 250,
