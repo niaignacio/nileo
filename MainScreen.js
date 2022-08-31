@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Pressable } from 'react-native';
 import React, {useEffect, useState} from 'react';
+import { auth } from './firebase';
 
 
 const MainScreen = ({ navigation, route }) => {
@@ -32,12 +33,28 @@ const MainScreen = ({ navigation, route }) => {
           })
           .catch(err => console.error(err));
   }
+  const addToLiked = () => {
+    console.log("adding " + title + " to " + auth.currentUser?.email + "'s liked movies");
+  }
+  const handleSignOut = () => {
+    console.log("handleSignOut()");
+    auth
+      .signOut()
+      .then(() => {
+        navigation.navigate("SignUp");
+      })
+  }
   return (
     
     <View style={styles.container}>
+          <View style={styles.inline}>
           <Pressable style={styles.navBtn} onPress = {fetchApiCall}>
                <Text> API Call </Text>
           </Pressable>
+          <Pressable style={styles.navBtn} onPress = {handleSignOut}>
+            <Text> Sign Out </Text>
+          </Pressable>
+          </View>
         <View style={styles.box}>
           <View style={styles.titlebox}>
           <Text style={styles.titlebox}>{title} </Text>
@@ -69,7 +86,7 @@ const MainScreen = ({ navigation, route }) => {
                     style={styles.circleBtn2}
                     source={require('./images/starBtn.png')} />
           </Pressable>
-          <Pressable style={styles.circleBtnContainer}>
+          <Pressable style={styles.circleBtnContainer} onPress={addToLiked}>
                <Image 
                     style={styles.circleBtn3}
                     source={require('./images/igHeart.png')} />
